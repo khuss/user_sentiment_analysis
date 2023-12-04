@@ -1,0 +1,8 @@
+tensorflow==2.14.0
+tensorflow_datasets==4.9.3
+tensorflow_hub==0.15.0
+Keras
+scikit-learn
+scipy
+numpy
+matplotlib
