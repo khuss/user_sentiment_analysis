@@ -26,13 +26,17 @@ The first thing we need to do after loading the datasets is to have a quick look
 
 So the dataset is composed of a text with a label of 1 or 0 if a user liked or disliked the movie respectively.
 
-IMAGE
+<p align="center">
+<img src="[https://github.com/khuss/user_sentiment_analysis/blob/main/results/imgs/sample_reviews.png]" width="400">
+</p>
 
 #### 2.1.2 - Data Exploration:
 
 The reviews length distribution resembles a semi-normal distribution with a denser distribution around the mean and exponentially decreasing as the word count gets further away from the mean.
 
-IMAGE
+<p align="center">
+<img src="[https://github.com/khuss/user_sentiment_analysis/blob/main/results/imgs/stats_data.png]" width="400">
+</p>
 
 Also the mean length of a review is approximately 234 words with a minimum and maximum reviews of 10 and 2470 words respectively.
 
@@ -94,7 +98,9 @@ After training for 10 epochs the peak test accuracy for the first simple transfo
 
 In the graph below we can see the results of the training session of all models over 10 epochs
 
-Image
+<p align="center">
+<img src="[https://github.com/khuss/user_sentiment_analysis/blob/main/results/compare_models.png]" width="400">
+</p>
 
 ## 4 - Conclusions and improvements
 
