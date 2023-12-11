@@ -62,7 +62,7 @@ However, it is easy to implement and doesn't require much training data easpecia
 
 The accuracy of this on the test set was 75.83 % which is not bad compared to a random baseline model with an approximate accuracy of 50.00 % given the 2 available classes. But still we can do better!
 
-#### 2.3.2 Multi-Layer Perceptron
+#### 2.3.2 - Multi-Layer Perceptron
 
 The second model we explore is the Multi-Layer Perceptron, which is our first and simplest neural network. With only a few layers including the text_vectorization input(encoder), 2 Dense layers and 2 droupout -layers useful to reduce overfitting-.
 
@@ -70,7 +70,7 @@ This model is not only simpler to implement and faster to train than the next mo
 
 It really goes to show "Sometimes simpler is better !"
 
-#### 2.3.3 MLP with an embedding layer
+#### 2.3.3 - MLP with an embedding layer
 
 For out third model we will use word embeddings, a vector representation of words as discussed in 2.2. The benefits of having word embeddings is to place words on a multi-dimensional latent space to model the similarities and other relationships between each word.
 
@@ -78,13 +78,13 @@ Besides this layer, the rest of the model is very similar to the Multi-layer Per
 
 The test accuracy of this model while still being decent at 81.84 % is worse than the previous model. The model clearly suffers from overfitting as the training accuracy is 100 %, we can thus see the benefits of having a dropout layer as in the previous model.
 
-#### 2.3.4 LSTM
+#### 2.3.4 - LSTM
 
 Next we use LSTMs a type of recurrent neural networks that stands for long short term memory useful when dealing with sequences and very powerful with NLP problems.
 
 While the models stills suffers from overfitting it still presents an improvement in performance with a peak test accuracy of 84.46 %. Improvements, if needed can still be made using dropout layers and other reguralization techniques.
 
-#### 2.3.4 Transformers
+#### 2.3.4 - Transformers
 
 Finally, we have the transformer, the state of the art in NLP and language generation. Although they can outperform any model at almost any NLP problem on the long run, as we will come to see, they are limited due to their size and complexity as they require large amounts of computational resources and training time to be effective.
 
