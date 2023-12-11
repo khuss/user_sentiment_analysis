@@ -50,9 +50,57 @@ However for the next models we will use `output mode = int`  and set `sequence_l
 
 ### 2.3 - NLP Models
 
-#### 2.3.1 Naive Bayes 
+#### 2.3.1 - Naive Bayes 
 
-The first model we will train is the Gaussian Naive Bayes a probabilistic classifier with the assumption that each class follows a normal distribution and that the features, or words in our case are independent, (a pretty strong assumption).
+The first model we will train is the Gaussian Naive Bayes a probabilistic classifier with the assumption that each class follows a normal distribution and that the features, or words in our case are independent, which is a pretty strong claim and the model's major disadvantage as in real life it is hardly case.
+
+However, it is easy to implement and doesn't require much training data easpecially if the assumption of independence holds.
+
+The accuracy of this on the test set was 75.83 % which is not bad compared to a random baseline model with an approximate accuracy of 50.00 % given the 2 available classes. But still we can do better!
+
+#### 2.3.2 Multi-Layer Perceptron
+
+The second model we explore is the Multi-Layer Perceptron, which is our first and simplest neural network. With only a few layers including the text_vectorization input(encoder), 2 Dense layers and 2 droupout -layers useful to reduce overfitting-.
+
+This model is not only simpler to implement and faster to train than the next more "sophisticated" models but also yielded the best accuracy of 88.23 % on the test set after training for 10 epochs.
+
+It really goes to show "Sometimes simpler is better !"
+
+#### 2.3.3 MLP with an embedding layer
+
+For out third model we will use word embeddings, a vector representation of words as discussed in 2.2. The benefits of having word embeddings is to place words on a multi-dimensional latent space to model the similarities and other relationships between each word.
+
+Besides this layer, the rest of the model is very similar to the Multi-layer Perceptron with 2 Dense layers following the flatten (used to unroll the output of the embedding into a one dimensional) and embedding layers.
+
+The test accuracy of this model while still being decent at 81.84 % is worse than the previous model. The model clearly suffers from overfitting as the training accuracy is 100 %, we can thus see the benefits of having a dropout layer as in the previous model.
+
+#### 2.3.4 LSTM
+
+Next we use LSTMs a type of recurrent neural networks that stands for long short term memory useful when dealing with sequences and very powerful with NLP problems.
+
+While the models stills suffers from overfitting it still presents an improvement in performance with a peak test accuracy of 84.46 %. Improvements, if needed can still be made using dropout layers and other reguralization techniques.
+
+#### 2.3.4 Transformers
+
+Finally, we have the transformer, the state of the art in NLP and language generation. Although they can outperform any model at almost any NLP problem on the long run, as we will come to see, they are limited due to their size and complexity as they require large amounts of computational resources and training time to be effective.
+
+For the first transformer model without positional embeddings, we use the `TransformerEncoder` class i.e the backbone of the model defined in the python file.
+
+For the second transformer model we add the `PositionalEmbedding` class/layer used to equip the overall word embedding representation with its positional information.
+
+After training for 10 epochs the peak test accuracy for the first simple transformer was 84.32 % and 84.66 %.
+
+## 3 - Training results
+
+In the graph below we can see the results of the training session of all models over 10 epochs
+
+Image
+
+## 4 - Conclusions and improvements
+
+After testing multiple models, the multi-layer perceptron presented the highest accuracy of approximately 89 % on the test dataset. Thus it is safe to say that this model can be deployed in a production environment. Additionally this model will be cheaper and easier to use in production.
+When evaluating the performance of the rest of the models although the Naive Bayes classifier seemed to be underffiting, the rest of the models all suffered from overfitting. And while some can be fixed easily with simple droupout layers  for others it doesn't seem that straightforward.
+At the end of the day choosing the right model to deploy in production depends on the maximum accuracy you can get with the lower cost and the constraints on each of these metrics.
 
 
 
