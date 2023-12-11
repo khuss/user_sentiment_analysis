@@ -98,8 +98,11 @@ Image
 
 ## 4 - Conclusions and improvements
 
-After testing multiple models, the multi-layer perceptron presented the highest accuracy of approximately 89 % on the test dataset. Thus it is safe to say that this model can be deployed in a production environment. Additionally this model will be cheaper and easier to use in production.
+After testing multiple models, the multi-layer perceptron presented the highest accuracy of approximately 89 % on the test dataset. Thus it is safe to say that this model can be deployed in a production environment. 
+Additionally this model will be cheaper and easier to use in production.
+
 When evaluating the performance of the rest of the models although the Naive Bayes classifier seemed to be underffiting, the rest of the models all suffered from overfitting. And while some can be fixed easily with simple droupout layers  for others it doesn't seem that straightforward.
+
 At the end of the day choosing the right model to deploy in production depends on the maximum accuracy you can get with the lower cost and the constraints on each of these metrics.
 
 
